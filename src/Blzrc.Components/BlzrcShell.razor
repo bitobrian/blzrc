@@ -1,0 +1,119 @@
+﻿@namespace Blzrc.Components
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .c-wrap {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .c-app-bar {
+        height: 64px;
+        background-color: #1976d2;
+    }
+
+    .c-app-bar-right {
+        float: right;
+    }
+    
+    .c-body {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+    }
+
+    .c-sidebar {
+        width: 64px;
+        background-color: #1565c0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0.2rem;
+    }
+
+    .c-sidebar-icon {
+        margin-bottom: 0.2rem;
+    }
+
+    .c-content {
+        flex: 1;
+        padding: 0.2rem;
+        background-color: #e0e0e0;
+    }
+
+    .c-status-bar {
+        height: 32px;
+        background-color: #1976d2;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .c-status-bar-right {
+        float: right;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .c-notifications {
+        display: flex;
+        flex-direction: row;
+        margin-right: 0.5rem;
+        gap: 0.5rem;
+    }
+</style>
+
+<div class="c-wrap">
+    <div class="c-app-bar">
+        @AppTitle
+        <div class="c-app-bar-right">
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+        </div>
+    </div>
+    <div class="c-body">
+        <div class="c-sidebar">
+            <div class="c-sidebar-icon">
+                <a href="/"><i class="bi bi-house-fill" style="@_iconStyle"></i></a>
+            </div>
+            <div class="c-sidebar-icon">
+                <a href="/counter"><i class="bi bi-123" style="@_iconStyle"></i></a>
+            </div>
+            <div class="c-sidebar-icon">
+                <a href="/fetchdata"><i class="bi bi-table" style="@_iconStyle"></i></a>
+            </div>
+        </div>
+        <div class="c-content">
+            @ChildContent
+        </div>
+    </div>
+    <div class="c-status-bar">
+        <p style="margin: 0 0.5rem;">Blazor RC</p>
+        <div class="c-status-bar-right">
+            <a href="https://blazor.net">Blazor</a>
+            <div class="c-notifications">
+                <a href="https://blazor.net">1</a>
+                <a href="https://blazor.net">2</a>
+                <a href="https://blazor.net">3</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code
+{
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public string AppTitle { get; set; } = "Blazor RC";
+
+    private string _iconStyle = "font-size: 2rem; color: white; text-shadow: 2px 2px 2px black;";
+}
