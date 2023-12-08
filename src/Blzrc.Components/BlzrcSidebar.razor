@@ -1,0 +1,21 @@
+
+<style>
+    .c-sidebar {
+        width: 64px;
+        background-color: #1976d2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0.2rem;
+    }
+</style>
+
+<div class="c-sidebar">
+    @ChildContent
+</div>
+
+@code 
+{
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = default!;
+}

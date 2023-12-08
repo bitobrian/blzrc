@@ -1,0 +1,17 @@
+<style>
+    .c-body {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+    }
+</style>
+
+<div class="c-body">
+    @ChildContent
+</div>
+
+@code
+{
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = default!;
+}

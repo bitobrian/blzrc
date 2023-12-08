@@ -1,5 +1,17 @@
 ﻿@inherits LayoutComponentBase
 
 <BlzrcShell>
-    @Body
+    <BlzrcTopBar Style="background-color: forestgreen;">
+        <BlzrcTopBarItem>
+            <a href="/">Application Title</a>
+        </BlzrcTopBarItem>
+        <BlzrcTopBarItem Right>
+            <a href="/counter">Counter</a>
+        </BlzrcTopBarItem>
+    </BlzrcTopBar>
+    <BlzrcBody>
+        <BlzrcBodyContent>
+            @Body
+        </BlzrcBodyContent>
+    </BlzrcBody>
 </BlzrcShell>

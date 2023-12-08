@@ -1,0 +1,27 @@
+﻿@page "/counter"
+
+<style>
+.clicky-button {
+        background-color: #007bff;
+        border: none;
+        border-radius: 0.25rem;
+        color: white;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+</style>
+
+<p style="margin: 0;">Current count: @_counter</p>
+
+<button class="clicky-button" @onclick="@IncrementCount">Click me</button>
+
+@code 
+{
+    int _counter = 0;
+
+    void IncrementCount()
+    {
+        _counter++;
+    }
+}

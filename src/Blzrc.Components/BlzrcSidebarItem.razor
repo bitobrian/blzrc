@@ -1,0 +1,17 @@
+<div style="@GetStyle">
+    @ChildContent
+</div>
+
+@code
+{
+    string marginBottom = "margin-bottom: 0.2rem;";
+    string marginTop = "margin-top: 0.2rem;";
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = default!;
+
+    [Parameter]
+    public bool IsIcon { get; set; } = false;
+
+    private string GetStyle => IsIcon ? $"{marginBottom}{marginTop}" : marginBottom;
+}

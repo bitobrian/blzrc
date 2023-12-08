@@ -1,0 +1,18 @@
+<style>
+    .c-status-bar {
+        height: 32px;
+        background-color: #1976d2;
+        display: flex;
+        flex-direction: row;
+    }
+</style>
+
+<div class="c-status-bar">
+    @ChildContent
+</div>
+
+@code
+{
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

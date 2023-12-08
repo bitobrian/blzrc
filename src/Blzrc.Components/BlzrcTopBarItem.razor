@@ -1,0 +1,16 @@
+<div style="@GetStyle">
+    @ChildContent
+</div>
+
+@code
+{
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public bool Right { get; set; } = false;
+
+    private string floatRight = "float: right;";
+
+    private string GetStyle => Right ? floatRight : "";
+}
